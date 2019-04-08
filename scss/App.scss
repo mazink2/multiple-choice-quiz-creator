@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
+
+// CSS Reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  background: #faf9fa;
+  font-size: .9rem;
+  // font-weight: 300;
+
+}
+
+// Utilities
+form {
+  border: 1px solid #ECEBED;
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin-bottom: 1.3rem;
+  background: #fff;
+
+  -webkit-box-shadow: 0px 1px 1px 1px rgba(52,70,71,0.45);
+  -moz-box-shadow: 0px 1px 1px 1px rgba(52,70,71,0.45);
+  box-shadow: 0px 1px 1px 1px rgba(52,70,71,0.45);
+}
+
+.form-field {
+  padding: .6rem .6rem;
+  border: 1px solid #c9c8c9;
+  border-radius: 10px;
+  font-size: .9rem;
+  width: 100%;
+  margin: .3rem 0;
+
+  outline-style:none;
+  box-shadow:none;
+
+  &:focus {
+    border-color: #1A2837;
+  }
+}
+
+button {
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: .55rem 1rem;
+  border-radius: 5px;
+  margin: .6rem .55rem 0 0;
+  letter-spacing: 1px;
+  font-weight: 300;
+  outline-style:none;
+  border-color:transparent;
+  transition: all .2s ease;
+  font-size: .75rem;
+
+  &:hover {
+    filter: brightness(130%)
+  }
+}
+
+// Scroll bars
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #737273; 
+  border-radius: 10px;
+}
+
+
+// Page content
+.grid-container {
+  height: 100vh;
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-height: 100%;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+  
+    // Forms section
+    .forms {
+      height: stretch;
+      overflow-y: auto;
+      overflow-x: none;
+      padding-right: .7rem;
+      padding-left: .2rem;
+    
+      form:last-of-type {
+        margin-bottom: .5rem;
+      }
+
+      .options {
+        padding: .25rem 0;
+        
+        .option {
+          display: flex;
+          justify-content: space-between;
+          padding: .65rem 0;
+
+          .fa-trash {
+            cursor: pointer;
+            margin-right: .65rem;
+            
+          }
+        }
+      }
+    }
+  
+  
+    // Display section
+    .display {
+      padding: 1.45rem 1.5rem 1.5rem 1.5rem;
+      height: stretch;
+      overflow-y: auto;
+      box-sizing: border-box;
+      font-size: .95rem;
+  
+  
+      .display-title {
+        margin-bottom: 1.8rem;
+
+        h1 {
+          margin-bottom: 1.2rem;
+          font-size:2rem;
+
+          & + li {
+            margin-top: .5rem;
+          }
+        }
+
+        p + li {
+          margin-top: .5rem;
+        }
+
+        li {
+          margin-left: 1.7rem;
+
+          span {
+            position: relative;
+            left: -.3rem;
+          }
+
+          & + p {
+            margin-top: .5rem;
+          }
+
+        }
+      }
+  
+      .display-questions {
+        .question {
+          margin-bottom: 1.5rem;
+          .question-name {
+            font-size: 1.2rem;
+            margin-bottom: .4rem;
+          }
+          .question-desc {
+            margin-bottom: .75rem;
+          }
+
+          .option-container {
+            padding: .5rem 0;
+            display: block;
+            width: 100%;
+            border-radius: 7px;
+            background: #faf9fa;
+            cursor: pointer;
+
+            display: block;
+            position: relative;
+            padding-left: 1.2rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            &:hover {
+              filter:brightness(96%);
+            }
+
+            input[type=checkbox] {
+              display: none;
+            }
+            
+            .checkmark {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 1%;
+              height: 1rem;
+              width: 1rem;
+              border: 1px solid rgba(0,0,0,.3);
+              background-color: #fff;
+              border-radius: 4px;
+              box-sizing: border-box;
+              
+              -webkit-box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.4);
+              -moz-box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.4);
+              box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.4);
+            }
+
+            &:hover input ~ .checkmark {
+              background-color: rgb(255, 243, 243);
+            }
+
+            input:checked ~ .checkmark {
+              background-color: #cac9c3;
+            }
+            
+            .option-content {
+              padding-left: .75rem;
+              word-wrap: break-word;
+              position: relative;
+              width: 1px;
+
+              span {
+                display: inline-block;
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
