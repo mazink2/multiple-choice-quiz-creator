@@ -44,7 +44,7 @@ export class TitleForm extends Component {
               <textarea
                 className="form-field"
                 name="description"
-                placeholder="Form Description"
+                placeholder="Form Description (you can start line with a '-' to create list items)"
                 value={this.state.description}
                 onChange={this.onChange.bind(this, value.dispatch)}
                 rows="5"
